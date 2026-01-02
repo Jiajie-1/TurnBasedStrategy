@@ -22,5 +22,12 @@ namespace TurnBasedStrategy.Entities
         {
             HP -= damage;
         }
+
+        public void Attack(Unit target)
+        {
+            if (!target.IsAlive) return;
+
+            target.TakeDamage(2);
+        }
     }
 }
