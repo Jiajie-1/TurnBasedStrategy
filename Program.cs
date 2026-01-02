@@ -1,13 +1,8 @@
-﻿using TurnBasedStrategy.Entities;
-using TurnBasedStrategy.Grid;
+﻿using TurnBasedStrategy.Game;
 
-var grid = new GameGrid(5, 5);
+var game = new GameManager();
 
-var player = new Player();
-var enemy = new Enemy();
-
-grid.PlaceUnit(player, new Position(1, 1));
-grid.PlaceUnit(enemy, new Position(3, 3));
-
-Console.WriteLine($"Player at {player.Position}, HP: {player.HP}");
-Console.WriteLine($"Enemy at {enemy.Position}, HP: {enemy.HP}");
+for (int i = 0; i < 4; i++)
+{
+    game.Update();
+}
